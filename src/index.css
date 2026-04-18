@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-power-orange: #ff6b00;
+  --color-aura-green: #10b981;
+  --color-aura-red: #ef4444;
+  --color-aura-amber: #f59e0b;
+}
+
+:root {
+  --bg-color: #f8fafc;
+  --text-main: #0f172a;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 107, 0, 0.15);
+  --card-tint: rgba(255, 107, 0, 0.03);
+  --grad-1: #fff7ed;
+  --grad-2: #eff6ff;
+  --grad-3: #fff1f2;
+  --grad-4: #f8fafc;
+}
+
+.dark {
+  --bg-color: #020617;
+  --text-main: #f8fafc;
+  --glass-bg: rgba(15, 23, 42, 0.8);
+  --glass-border: rgba(255, 107, 0, 0.25);
+  --card-tint: rgba(255, 107, 0, 0.08);
+  --grad-1: #0f172a;
+  --grad-2: #1e1b4b;
+  --grad-3: #020617;
+  --grad-4: #111827;
+}
+
+@layer base {
+  body {
+    @apply antialiased min-h-screen transition-colors duration-500;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+    background-image: 
+      radial-gradient(at 0% 0%, var(--grad-1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, var(--grad-2) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, var(--grad-3) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, var(--grad-4) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-[20px] border border-solid rounded-[24px] shadow-sm transition-all duration-300;
+    background-color: var(--glass-bg);
+    border-color: var(--glass-border);
+  }
+
+  .section-title {
+    @apply text-[11px] uppercase tracking-[1.5px] font-bold mb-4 italic transition-colors;
+    color: var(--text-main);
+    opacity: 0.4;
+  }
+
+  .badge-amber {
+    @apply bg-linear-to-br from-[#ff914d] to-[#ff6b00] text-white px-4 py-1.5 rounded-full font-bold text-sm shadow-md;
+  }
+}

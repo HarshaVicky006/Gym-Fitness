@@ -1,0 +1,6 @@
+{
+  "name": "Muscle Power Workout",
+  "description": "High-intensity fitness tracking for peak performance. Track your muscle-building journey with dynamic workouts and real-time insights.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": []
+}
